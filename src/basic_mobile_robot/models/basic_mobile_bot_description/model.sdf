@@ -36,11 +36,32 @@
     </visual>
   </link>
 
-  <!-- ********************** CART 1 *********************************  -->
-  <link name="cart_base_link">
-    <pose>-0.75 0 0 0 0 0</pose>
+  <!-- ********************** HITCH 1 *********************************  -->
+  <link name="hitch1_link">
+    <pose>-0.5 0 0 0 0 0</pose>
 
-    <collision name="cart_base_collision">
+    <collision name="hitch1_collision">
+      <geometry>
+        <box>
+          <size>0.1 0.1 0.1</size>
+        </box>
+      </geometry>
+    </collision>
+
+    <visual name="hitch1_visual">
+      <geometry>
+        <box>
+          <size>0.1 0.1 0.1</size>
+        </box>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- ********************** CART 1 *********************************  -->
+  <link name="cart1_base_link">
+    <pose>-1.0 0 0 0 0 0</pose>
+
+    <collision name="cart1_base_collision">
       <geometry>
         <box>
           <size>0.5 0.3 0.2</size>
@@ -48,7 +69,7 @@
       </geometry>
     </collision>
 
-    <visual name="cart_base_visual">
+    <visual name="cart1_base_visual">
       <geometry>
         <box>
           <size>0.5 0.3 0.2</size>
@@ -395,10 +416,10 @@
    </axis>
   </joint>
 
-  <joint name="cart_joint" type="revolute">
+  <joint name="hitch1_joint" type="revolute">
     <parent>base_link</parent>
-    <child>cart_base_link</child>
-    <pose>0.75 0 0 0 0 0</pose>
+    <child>hitch1_link</child>
+    <pose>0 0 0 0 0 0</pose>
     <axis>
       <xyz>0 0 1</xyz>
       <limit>
@@ -408,6 +429,12 @@
         <velocity>1.0</velocity>
       </limit>
     </axis>
+  </joint>
+
+  <joint name="cart1_joint" type="fixed">
+    <parent>hitch1_link</parent>
+    <child>cart1_base_link</child>
+    <pose>0 0 0 0 0 0</pose>
   </joint>
 
   <joint name="imu_joint" type="fixed">
