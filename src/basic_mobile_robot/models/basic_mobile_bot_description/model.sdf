@@ -142,7 +142,7 @@
 
   <!-- ********************** CART 2 *********************************  -->
   <link name="cart2_base_link">
-    <pose>-1.0 0 0 0 0 0</pose>
+    <pose>-2.0 0 0 0 0 0</pose>
 
     <collision name="cart2_base_collision">
       <geometry>
@@ -162,7 +162,7 @@
   </link>
 
   <link name="cart2_wheel_left">
-    <pose>-0.8 0.18 -0.1 0 1.570796 1.570796</pose>
+    <pose>-2.15 0.18 -0.1 0 1.570796 1.570796</pose>
     <collision name="cart2_wheel_left_collision">
       <geometry>
         <cylinder>
@@ -182,7 +182,7 @@
   </link>
 
   <link name="cart2_wheel_right">
-    <pose>-0.8 -0.18 -0.1 0 1.570796 1.570796</pose>
+    <pose>-2.15 -0.18 -0.1 0 1.570796 1.570796</pose>
     <collision name="cart1_wheel_right_collision">
       <geometry>
         <cylinder>
