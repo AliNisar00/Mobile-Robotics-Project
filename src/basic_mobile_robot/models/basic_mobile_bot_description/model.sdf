@@ -78,6 +78,46 @@
     </visual>
   </link>
 
+  <link name="cart1_wheel_left">
+    <pose>-1.15 0.18 -0.1 0 1.570796 1.570796</pose>
+    <collision name="cart1_wheel_left_collision">
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>0.05</length>
+        </cylinder>
+      </geometry>
+    </collision>
+    <visual name="cart1_wheel_left_visual">
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>0.05</length>
+        </cylinder>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="cart1_wheel_right">
+    <pose>-1.15 -0.18 -0.1 0 1.570796 1.570796</pose>
+    <collision name="cart1_wheel_right_collision">
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>0.05</length>
+        </cylinder>
+      </geometry>
+    </collision>
+    <visual name="cart1_wheel_right_visual">
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>0.05</length>
+        </cylinder>
+      </geometry>
+    </visual>
+  </link>
+
   <!-- *********************** IMU SENSOR SETUP **************************  -->
   <link name="imu_link">
     <gravity>true</gravity>
@@ -435,6 +475,22 @@
     <parent>hitch1_link</parent>
     <child>cart1_base_link</child>
     <pose>0 0 0 0 0 0</pose>
+  </joint>
+
+  <joint name="cart1_wheel_left_joint" type="revolute">
+    <parent>cart1_base_link</parent>
+    <child>cart1_wheel_left</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+    </axis>
+  </joint>
+
+  <joint name="cart1_wheel_right_joint" type="revolute">
+    <parent>cart1_base_link</parent>
+    <child>cart1_wheel_right</child>
+    <axis>
+      <xyz>0 0 1</xyz>
+    </axis>
   </joint>
 
   <joint name="imu_joint" type="fixed">
