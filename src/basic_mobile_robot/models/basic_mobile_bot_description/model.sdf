@@ -36,6 +36,27 @@
     </visual>
   </link>
 
+  <!-- ********************** CART 1 *********************************  -->
+  <link name="cart_base_link">
+    <pose>-0.75 0 0 0 0 0</pose>
+
+    <collision name="cart_base_collision">
+      <geometry>
+        <box>
+          <size>0.5 0.3 0.2</size>
+        </box>
+      </geometry>
+    </collision>
+
+    <visual name="cart_base_visual">
+      <geometry>
+        <box>
+          <size>0.5 0.3 0.2</size>
+        </box>
+      </geometry>
+    </visual>
+  </link>
+
   <!-- *********************** IMU SENSOR SETUP **************************  -->
   <link name="imu_link">
     <gravity>true</gravity>
@@ -372,6 +393,21 @@
    <axis>
      <xyz>0 0 1</xyz>
    </axis>
+  </joint>
+
+  <joint name="cart_joint" type="revolute">
+    <parent>base_link</parent>
+    <child>cart_base_link</child>
+    <pose>0.75 0 0 0 0 0</pose>
+    <axis>
+      <xyz>0 0 1</xyz>
+      <limit>
+        <lower>-1.57</lower>
+        <upper>1.57</upper>
+        <effort>10</effort>
+        <velocity>1.0</velocity>
+      </limit>
+    </axis>
   </joint>
 
   <joint name="imu_joint" type="fixed">
