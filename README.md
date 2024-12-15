@@ -1,1 +1,2 @@
-# autonomous_tow_truck
+# Please note
+This repo only houses the things that worked (mostly). I forgot to fork the original repo (https://github.com/munzir/autonomous_tow_truck) so the record of days of prior piece-by-piece building of this simulation is missing. Still, https://github.com/AliNisar00/diffDriveRobot provides my work on this project in my personal repo built from the ground up. Refer to the "release" branch to try out an at-scale differential drive tow truck with two trailers modelled after the Toyota grill doleys in IMC.
